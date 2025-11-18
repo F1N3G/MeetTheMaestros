@@ -1,5 +1,3 @@
-Here's a comprehensive README file for your Classical Maestros project:
-
 ClassicalMaestros/
 ├── app.py # Main Flask application
 ├── main.py # Application entry point
