@@ -1,0 +1,263 @@
+/* Custom CSS for Meet the Maestros */
+:root {
+    --classical-gold: #d4af37;
+    --classical-dark-blue: #1e3a8a;
+    --classical-cream: #f8f6f0;
+}
+
+/* Typography */
+body {
+    font-family: 'Crimson Text', serif;
+    line-height: 1.6;
+}
+
+.display-3, .display-4, .display-5, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h1 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content .lead {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-content .btn {
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+/* Composer Cards */
+.composer-card {
+    background: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.composer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.composer-card .card-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.composer-card .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.composer-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.composer-card .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.3), transparent);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.period-badge {
+    background: rgba(255,255,255,0.9);
+    color: var(--bs-dark);
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.composer-card .card-body {
+    padding: 1.5rem;
+}
+
+.composer-card .card-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--bs-body-color);
+}
+
+.composer-card .card-actions {
+    margin-top: 1rem;
+}
+
+/* Composer Sections */
+.composer-section {
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.composer-section:nth-child(even) {
+    background: var(--bs-secondary-bg);
+}
+
+.composer-portrait img {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.composer-info {
+    text-align: center;
+}
+
+/* Video Container */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Composition List */
+.list-unstyled li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.list-unstyled li:last-child {
+    border-bottom: none;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--classical-gold) !important;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .composer-card .card-image {
+        height: 250px;
+    }
+    
+    .video-container {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .composer-card .card-image {
+        height: 200px;
+    }
+    
+    .composer-section .row {
+        flex-direction: column-reverse;
+    }
+    
+    .composer-section .col-lg-4 {
+        text-align: center;
+    }
+}
+
+/* Smooth scrolling enhancement */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bs-secondary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bs-border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bs-secondary);
+}
