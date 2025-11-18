@@ -1,2 +1,2 @@
 # MeetTheMaestros
-Proiect realizat in cadrul precticii de vara la compania AgileFreaks
+Proiect realizat in cadrul practicii de vara la compania AgileFreaks
